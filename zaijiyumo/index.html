@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在寂与寞的川流上 - 沉浸式文学与视觉体验</title>
+    <meta name="description" content="在寂与寞的川流上，探索孤独、时光与记忆的文学空间。收录现代诗歌、散文随笔及原创视觉艺术，构建静谧的线上栖息地。">
+    <meta name="keywords" content="在寂与寞的川流上, 诗歌, 散文, 文学, 孤独, 记忆, 视觉艺术">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #f4f4f4;
+            --bg-paper: #fffefb;
+            --text-main: #2c2c2c;
+            --text-muted: #666;
+            --accent: #5d5d5d;
+            --border: #e0e0e0;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --spacing-unit: 1rem;
+            --container-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: normal;
+            color: var(--text-main);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-paper);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            filter: grayscale(80%) contrast(1.2);
+            transition: transform 10s ease;
+        }
+
+        .hero:hover .hero-bg {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-paper);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 4px;
+            box-shadow: 20px 20px 0px var(--border);
+        }
+
+        /* Works Grid */
+        .works {
+            background-color: var(--bg-body);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--bg-paper);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .work-img {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-img img {
+            transform: scale(1.05);
+        }
+
+        .work-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .work-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .read-link::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: margin-left 0.3s ease;
+        }
+
+        .read-link:hover::after {
+            margin-left: 1rem;
+        }
+
+        /* Philosophy / Quote */
+        .philosophy {
+            background-color: var(--bg-paper);
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .quote {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Contact & Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">在寂与寞的川流上</a>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">关于</a></li>
+                    <li><a href="#works">作品</a></li>
+                    <li><a href="#philosophy">理念</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://picsum.photos/seed/river/1920/1080" alt="川流之上" class="hero-bg">
+            <div class="hero-content">
+                <h1>在寂与寞的川流上</h1>
+                <p>当喧嚣退去，我们在时间的河床上拾捡记忆的碎片，书写关于孤独、离别与重逢的永恒诗篇。</p>
+                <a href="#works" class="btn">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">关于这里</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p><strong>“在寂与寞的川流上”</strong> 是一个专注于现代文学与视觉艺术表达的独立创作空间。我们相信，孤独并非一种匮乏，而是一种丰盈的沉淀。在这里，文字与图像交织，试图捕捉那些在人群中稍纵即逝的情绪。</p>
+                        <p>无论是关于都市生活的疲惫与渴望，还是对自然与历史的深沉凝视，我们都致力于呈现最纯粹、最真实的内心独白。我们拒绝快餐式的阅读体验，主张在静谧的氛围中，与读者进行深度的精神对话。</p>
+                        <p>这个平台由几位热爱文字的独立创作者共同维护，旨在为每一个在川流中感到寂寞的灵魂，提供一个温暖的栖息地。</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/studio/600/400" alt="创作空间示意图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="section works">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选作品</h2>
+                </div>
+                <div class="works-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/rain/400/300" alt="雨夜">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">散文随笔</span>
+                            <h3 class="work-title">雨夜里的旧车站</h3>
+                            <p class="work-desc">关于等待与错过的故事，记录在一个被雨水冲刷的夜晚，旧车站里发生的那些微不足道却又刻骨铭心的小事。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/mountain/400/300" alt="远山">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">现代诗歌</span>
+                            <h3 class="work-title">山岚与沉默</h3>
+                            <p class="work-desc">一组短诗，探讨人与自然、自我与外界的界限。在山岚散去之前，我们该如何面对内心的荒原。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/night/400/300" alt="夜色">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">摄影叙事</span>
+                            <h3 class="work-title">城市折叠</h3>
+                            <p class="work-desc">通过一组黑白摄影作品，展现现代都市在夜幕下被折叠的几何结构，隐喻人类在庞大社会机器中的迷失。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <!-- Work 4 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/oldbook/400/300" alt="旧书">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">书评</span>
+                            <h3 class="work-title">读《荒原狼》</h3>
+                            <p class="work-desc">赫尔曼·黑塞笔下的流浪者，是否也是我们在川流上寻找自我的倒影？深度解析经典文学中的孤独美学。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <!-- Work 5 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/water/400/300" alt="流水">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">随笔</span>
+                            <h3 class="work-title">流水不争先</h3>
+                            <p class="work-desc">探讨“静水流深”的哲学意义。在快节奏的时代，慢下来是否意味着落后，还是一种更高维度的智慧。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+
+                    <!-- Work 6 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/autumn/400/300" alt="秋叶">
+                        </div>
+                        <div class="work-content">
+                            <span class="work-tag">视觉艺术</span>
+                            <h3 class="work-title">落叶的几何学</h3>
+                            <p class="work-desc">关于季节更替的视觉记录。每一片落叶的轨迹，都是川流上的一段微小叙事。</p>
+                            <a href="#" class="read-link">阅读全文</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="philosophy">
+            <div class="container">
+                <blockquote class="quote">
+                    “我们都在各自的川流上独自漂流，<br>偶尔相遇，交换彼此的灯火，<br>然后继续走向各自的寂静。”
+                </blockquote>
+                <div class="quote-author">—— 创作团队寄语</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="background-color: var(--bg-body);">
+            <div class="container" style="max-width: 600px;">
+                <div class="section-header">
+                    <h2 class="section-title">联系与投稿</h2>
+                </div>
+                <div style="background: var(--bg-paper); padding: 2rem; border-radius: 4px; border: 1px solid var(--border);">
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">如果您有关于文学创作的想法、合作意向，或者仅仅是想分享您在“川流”中的见闻，欢迎与我们联系。</p>
+                    <form onsubmit="event.preventDefault(); alert('感谢您的来信，我们会在寂静中尽快阅读并回复。');" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">您的称呼</label>
+                            <input type="text" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;" placeholder="匿名亦可" required>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">电子邮箱</label>
+                            <input type="email" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;" placeholder="name@example.com" required>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem;">留言内容</label>
+                            <textarea rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;" placeholder="写下您想说的话..." required></textarea>
+                        </div>
+                        <button type="submit" style="padding: 0.8rem; background-color: var(--text-main); color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background 0.3s;">发送讯息</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>在寂与寞的川流上</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">一个关于孤独、记忆与文学的独立空间。<br>在这里，我们寻找共鸣，也享受独处。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">散文随笔</a></li>
+                        <li><a href="#">现代诗歌</a></li>
+                        <li><a href="#">摄影叙事</a></li>
+                        <li><a href="#">书评影评</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">豆瓣日记</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 在寂与寞的川流上. All Rights Reserved. Designed for Reflection.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

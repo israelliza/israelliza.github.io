@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛2冒险吧-冒险岛2新手入门指南与职业选择攻略</title>
+    <meta name="description" content="本站提供冒险岛2冒险吧相关的最新游戏资讯、职业深度解析、新手升级路线图以及装备获取技巧。帮助玩家快速了解游戏核心玩法，开启精彩的冒险之旅。">
+    <meta name="keywords" content="冒险岛2, 冒险吧, 冒险岛2攻略, 冒险岛2职业, 冒险岛2新手, 冒险岛2下载">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --accent-color: #FF9800;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f4f6f8;
+            --text-main: #333;
+            --text-light: #666;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #764ba2;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Content Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Job Guide */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-icon {
+            width: 100%;
+            height: 150px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .job-info {
+            padding: 20px;
+        }
+
+        .job-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .job-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #e0f7fa;
+            color: #006064;
+        }
+
+        .tag.healer { background-color: #e8f5e9; color: #1b5e20; }
+        .tag.dps { background-color: #fff3e0; color: #e65100; }
+        .tag.tank { background-color: #ffebee; color: #b71c1c; }
+
+        /* Guide List */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            display: flex;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .guide-thumb {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .guide-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .guide-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .guide-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .guide-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .guide-item { flex-direction: column; }
+            .guide-thumb { width: 100%; height: 180px; }
+            nav ul { display: none; } /* Simplified for mobile */
+            .header-inner { justify-content: center; }
+            .logo { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>冒险岛2</span>冒险吧
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#jobs">职业介绍</a></li>
+                <li><a href="#guides">新手攻略</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-btn">立即下载游戏</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>开启你的全新冒险</h1>
+            <p>欢迎来到冒险岛2的世界。在这里，你将体验全新的3D画面、丰富的职业系统和自由的社交玩法。无论你是追求极致战斗的战士，还是治愈队友的牧师，这里都有属于你的舞台。</p>
+            <div class="hero-buttons">
+                <a href="#guides" class="btn btn-primary">查看新手指南</a>
+                <a href="#jobs" class="btn btn-secondary">选择你的职业</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Introduction -->
+    <section id="jobs">
+        <div class="container">
+            <h2 class="section-title">职业选择</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--text-light);">根据你的游戏风格，选择最适合的伙伴</p>
+            
+            <div class="job-grid">
+                <!-- Warrior -->
+                <article class="job-card">
+                    <img src="https://picsum.photos/seed/warrior/400/250" alt="战士" class="job-icon">
+                    <div class="job-info">
+                        <h3>战士</h3>
+                        <div class="job-tags">
+                            <span class="tag tank">坦克</span>
+                            <span class="tag dps">输出</span>
+                        </div>
+                        <p>近战物理输出，拥有强大的生存能力和爆发伤害，是队伍中不可或缺的防线。</p>
+                    </div>
+                </article>
+
+                <!-- Wizard -->
+                <article class="job-card">
+                    <img src="https://picsum.photos/seed/wizard/400/250" alt="法师" class="job-icon">
+                    <div class="job-info">
+                        <h3>法师</h3>
+                        <div class="job-tags">
+                            <span class="tag dps">范围输出</span>
+                        </div>
+                        <p>操控元素力量，拥有极高的魔法伤害和范围攻击能力，是清理怪物的利器。</p>
+                    </div>
+                </article>
+
+                <!-- Archer -->
+                <article class="job-card">
+                    <img src="https://picsum.photos/seed/archer/400/250" alt="弓箭手" class="job-icon">
+                    <div class="job-info">
+                        <h3>弓箭手</h3>
+                        <div class="job-tags">
+                            <span class="tag dps">远程输出</span>
+                        </div>
+                        <p>灵活的远程物理职业，擅长陷阱和敏捷攻击，在战斗中保持安全距离。</p>
+                    </div>
+                </article>
+
+                <!-- Priest -->
+                <article class="job-card">
+                    <img src="https://picsum.photos/seed/priest/400/250" alt="牧师" class="job-icon">
+                    <div class="job-info">
+                        <h3>牧师</h3>
+                        <div class="job-tags">
+                            <span class="tag healer">治疗</span>
+                            <span class="tag support">辅助</span>
+                        </div>
+                        <p>团队的核心，能够治疗队友并提供增益buff，守护团队的生存。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide List -->
+    <section id="guides" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section-title">新手攻略</h2>
+            <div class="guide-list">
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/levelup/300/200" alt="升级路线" class="guide-thumb">
+                    <div class="guide-content">
+                        <div class="guide-meta">发布于 2023-10-15 · 攻略</div>
+                        <h3 class="guide-title">冒险岛2快速升级路线图：从1级到满级</h3>
+                        <p class="guide-excerpt">新手如何高效升级？本文详细解析了前30级的任务流程、支线任务推荐以及副本刷怪的最佳路线，助你快速脱离新手村。</p>
+                    </div>
+                </article>
+
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/weapon/300/200" alt="装备打造" class="guide-thumb">
+                    <div class="guide-content">
+                        <div class="guide-meta">发布于 2023-10-20 · 装备</div>
+                        <h3 class="guide-title">装备打造全解析：强化、附魔与附魔石</h3>
+                        <p class="guide-excerpt">装备是提升战力的关键。了解强化失败的保护机制，掌握附魔石获取途径，打造属于你的毕业装备。</p>
+                    </div>
+                </article>
+
+                <article class="guide-item">
+                    <img src="https://picsum.photos/seed/social/300/200" alt="社交玩法" class="guide-thumb">
+                    <div class="guide-content">
+                        <div class="guide-meta">发布于 2023-10-25 · 社交</div>
+                        <h3 class="guide-title">结交好友：公会系统与社交技巧</h3>
+                        <p class="guide-excerpt">冒险岛2不仅是战斗，更是社交。如何加入公会？如何与队友配合？掌握这些技巧，让你的冒险之旅不再孤单。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">冒险岛2现在还支持哪些平台？</div>
+                    <div class="faq-answer">冒险岛2目前主要支持PC端，通过官方客户端进行游玩。移动端版本尚未正式推出，请关注官方公告。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">新手职业推荐选择哪个？</div>
+                    <div class="faq-answer">对于新手玩家，建议从操作相对简单、容错率高的职业入手。战士和牧师是新手最友好的选择，既能参与战斗又能体验辅助乐趣。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">游戏收费模式是怎样的？</div>
+                    <div class="faq-answer">冒险岛2采用免费游玩（Free-to-Play）模式。游戏内设有商城，出售外观、坐骑等道具，但不影响游戏的数值平衡。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何加入公会？</div>
+                    <div class="faq-answer">在游戏主城找到公会管理员NPC，点击“申请加入”或直接联系公会会长发送邀请即可。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p>本站致力于为冒险岛2玩家提供最新、最全的游戏资讯与攻略支持。我们热爱冒险，更热爱分享。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">游戏下载</a></li>
+                    <li><a href="#">职业攻略</a></li>
+                    <li><a href="#">装备图鉴</a></li>
+                    <li><a href="#">玩家社区</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>客服邮箱：support@example.com</li>
+                    <li>官方论坛：bbs.example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 冒险岛2冒险吧. All Rights Reserved. 本站为非官方网站，仅供信息展示与交流。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后街男孩演唱会-全球巡回演出资讯、购票指南与经典回顾</title>
+    <meta name="description" content="后街男孩演唱会官方资讯平台，提供2024-2025全球巡演时间表、城市站点、购票渠道及经典现场视频回顾。全面解析后街男孩音乐生涯与现场演出体验。">
+    <meta name="keywords" content="后街男孩演唱会,后街男孩巡演,后街男孩2024,后街男孩票务,后街男孩现场">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a8e8;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-light: #f4f6f8;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: #008cc2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/backstreetboysconcert/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--secondary-color);
+        }
+
+        /* Info Cards Section */
+        .info-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .info-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: rgba(0, 168, 232, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Tour Schedule Section */
+        .tour-section {
+            background-color: var(--bg-light);
+            padding: 80px 20px;
+        }
+
+        .tour-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .schedule-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .schedule-item:hover {
+            border-left-color: var(--accent-color);
+            transform: translateX(10px);
+        }
+
+        .date-box {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .date-box .day {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+        }
+
+        .date-box .month {
+            font-size: 1rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .venue-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .venue-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .ticket-status {
+            text-align: right;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-available {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-limited {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #666;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .schedule-item { flex-direction: column; text-align: center; gap: 15px; }
+            .ticket-status { text-align: center; width: 100%; }
+            .hero-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">BSB<span>Live</span></a>
+            <nav class="nav-links">
+                <a href="#tour">演出行程</a>
+                <a href="#news">最新资讯</a>
+                <a href="#videos">现场视频</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#tour" class="cta-btn">查看购票</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>后街男孩<br>永恒旋律，再度启程</h1>
+                <p>重温90年代经典，体验跨越时代的完美和声。2024全球巡演即将拉开帷幕，请勿错过这场视听盛宴。</p>
+                <div class="hero-buttons">
+                    <a href="#tour" class="cta-btn">立即购票</a>
+                    <a href="#videos" class="btn-outline">观看预告</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Info Section -->
+        <section class="info-section">
+            <div class="section-header">
+                <h2>关于此次巡演</h2>
+                <p>后街男孩（Backstreet Boys）作为历史上最畅销的流行乐队之一，此次巡演将带来全新的舞台设计、震撼的灯光效果以及历年经典金曲。</p>
+            </div>
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/b1/400/300.jpg" alt="演唱会现场">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">经典回归</span>
+                        <h3>重现黄金时代</h3>
+                        <p>演出曲目将涵盖《I Want It That Way》、《As Long As You Love Me》等传世名作，并融入最新专辑元素。</p>
+                        <a href="#" class="card-link">了解曲目单 &rarr;</a>
+                    </div>
+                </article>
+                <article class="info-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/b2/400/300.jpg" alt="舞台特效">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">沉浸体验</span>
+                        <h3>360度环绕舞台</h3>
+                        <p>采用最新3D环绕声技术，配合巨型LED屏幕，打造全方位沉浸式视听体验，近距离感受偶像魅力。</p>
+                        <a href="#" class="card-link">查看舞台图解 &rarr;</a>
+                    </div>
+                </article>
+                <article class="info-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/b3/400/300.jpg" alt="粉丝互动">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">特别福利</span>
+                        <h3>限定周边发售</h3>
+                        <p>现场将独家发售巡演限定纪念T恤、签名海报及黑胶唱片，数量有限，先到先得。</p>
+                        <a href="#" class="card-link">查看周边详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tour Schedule Section -->
+        <section id="tour" class="tour-section">
+            <div class="tour-container">
+                <div class="section-header">
+                    <h2>2024-2025 巡演行程</h2>
+                    <p>请根据您的所在地选择合适的场次，票务信息实时更新。</p>
+                </div>
+                
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <div class="day">15</div>
+                            <div class="month">Nov</div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>北京国家体育场（鸟巢）</h3>
+                            <p>中国 · 北京</p>
+                        </div>
+                        <div class="ticket-status">
+                            <span class="status-badge status-available">票务开售</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <div class="day">22</div>
+                            <div class="month">Nov</div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>上海东方体育中心</h3>
+                            <p>中国 · 上海</p>
+                        </div>
+                        <div class="ticket-status">
+                            <span class="status-badge status-limited">余票紧张</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <div class="day">05</div>
+                            <div class="month">Dec</div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>广州体育馆</h3>
+                            <p>中国 · 广州</p>
+                        </div>
+                        <div class="ticket-status">
+                            <span class="status-badge status-available">票务开售</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="date-box">
+                            <div class="day">12</div>
+                            <div class="month">Dec</div>
+                        </div>
+                        <div class="venue-info">
+                            <h3>深圳湾体育中心</h3>
+                            <p>中国 · 深圳</p>
+                        </div>
+                        <div class="ticket-status">
+                            <span class="status-badge status-available">票务开售</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="videos" class="video-section">
+            <div class="section-header">
+                <h2>精彩现场回顾</h2>
+                <p>回顾后街男孩历年经典演唱会的震撼瞬间。</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Backstreet Boys Live" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?controls=0" title="Backstreet Boys Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="faq-container">
+                <div class="section-header">
+                    <h2>常见问题 (FAQ)</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        演唱会门票在哪里购买？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        官方票务信息请关注本站“演出行程”栏目，我们将提供官方授权渠道链接。建议通过正规票务平台或场馆官方渠道购买，谨防高价假票。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        演唱会可以携带相机吗？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        根据场馆规定，通常允许携带便携式卡片相机，但不允许使用长焦镜头或专业摄影设备。禁止使用专业摄像设备和闪光灯拍照。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        演出开始前多久入场？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        建议提前60-90分钟到达场馆，以便完成安检和入场流程。开场后通常不再允许迟到者入场，以免影响其他观众体验。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        门票丢失如何补办？
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        电子票通常保存在购票APP中，请截图保存。纸质票请妥善保管，遗失不补。如有特殊情况，请联系购票平台客服咨询。
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="color:#fff; margin-bottom:15px;">BSB<span>Live</span></div>
+                <p style="color:#ccc; font-size:0.9rem;">致力于提供最准确、最及时的全球后街男孩演唱会资讯与粉丝服务。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#tour">演出时间表</a></li>
+                    <li><a href="#news">最新动态</a></li>
+                    <li><a href="#videos">MV视频</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>票务指南</h4>
+                <ul>
+                    <li><a href="#">购票须知</a></li>
+                    <li><a href="#">退换票政策</a></li>
+                    <li><a href="#">场馆地图</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">官方微博</a></li>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">粉丝社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 BSB Live Info. All rights reserved. 本站为粉丝资讯聚合平台，非官方网站。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

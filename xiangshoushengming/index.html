@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>享受生命的春光 - 自然治愈与心灵休憩指南</title>
+    <meta name="description" content="本站致力于为您提供关于如何更好地享受生命春光的实用指南，包括春日出游、自然疗愈、生活美学及季节性养生建议，帮助您在忙碌生活中找到内心的宁静与生机。">
+    <meta name="keywords" content="享受生命的春光, 春日出游, 自然疗愈, 春季养生, 生活美学">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --secondary-green: #e8f5e9;
+            --accent-gold: #d4a017;
+            --text-dark: #2c3e50;
+            --text-light: #607d8b;
+            --bg-body: #fafafa;
+            --bg-card: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 6px 16px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #3a6348;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/springlight/1920/1080') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-green);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-link {
+            font-weight: 600;
+            color: var(--primary-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            gap: 10px;
+        }
+
+        /* Feature List Section */
+        .features {
+            background-color: white;
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-img {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 400px;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-img:hover img {
+            transform: scale(1.03);
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-list li::before {
+            content: '🌿';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Guide Section */
+        .guide-steps {
+            background-color: var(--secondary-green);
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .step-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background-color: rgba(74, 124, 89, 0.3);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border: 3px solid var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: var(--primary-green);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-bottom: 80px;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .form-group button {
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #c6920e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #b0bec5;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .feature-row, .feature-row:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .feature-img img {
+                height: 250px;
+            }
+            .step-container::before {
+                display: none;
+            }
+            .step-item {
+                margin-bottom: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group button {
+                width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">春光<span>指南</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#nature" class="active">自然探索</a></li>
+                    <li><a href="#healing">心灵疗愈</a></li>
+                    <li><a href="#guide">生活指南</a></li>
+                    <li><a href="#community">社区</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="cta-btn">开始规划</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">自然</span>
+                    <span class="tag">慢生活</span>
+                    <span class="tag">季节美学</span>
+                </div>
+                <h1>享受生命的春光</h1>
+                <p>当冰雪消融，万物复苏，是时候走出室内，拥抱大自然赋予我们的生机与活力。这里有关于如何捕捉、感受并延续这份春日美好的全方位指南。</p>
+                <a href="#nature" class="cta-btn" style="background: white; color: var(--primary-green);">探索春日秘境</a>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section id="nature" class="container">
+            <div class="section-header">
+                <h2>春日探索主题</h2>
+                <p>根据您的兴趣，探索不同的春日生活方式</p>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/forest/400/300" alt="森林徒步" class="card-img">
+                    <div class="card-body">
+                        <span class="card-meta">户外运动</span>
+                        <h3 class="card-title">森林徒步与氧吧之旅</h3>
+                        <p class="card-text">深呼吸，感受清新的空气。春季是森林徒步的最佳时节，避开酷暑，在林间小道中享受大自然的馈赠。</p>
+                        <a href="#" class="card-link">查看路线 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/flower/400/300" alt="花卉摄影" class="card-img">
+                    <div class="card-body">
+                        <span class="card-meta">摄影艺术</span>
+                        <h3 class="card-title">花卉摄影入门技巧</h3>
+                        <p class="card-text">如何拍出通透、鲜艳的春日花朵？掌握光圈、快门与构图技巧，定格春天的每一抹色彩。</p>
+                        <a href="#" class="card-link">学习技巧 &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/food/400/300" alt="春日野餐" class="card-img">
+                    <div class="card-body">
+                        <span class="card-meta">生活方式</span>
+                        <h3 class="card-title">精致春日野餐指南</h3>
+                        <p class="card-text">带上野餐垫、美食与音乐，在草地上享受午后的慵懒时光，与亲友共度美好周末。</p>
+                        <a href="#" class="card-link">查看清单 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Feature Section: Deep Dive -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/tea/600/400" alt="茶道与冥想">
+                    </div>
+                    <div class="feature-content">
+                        <h3>茶道与冥想：慢下来的艺术</h3>
+                        <p style="margin-bottom: 20px; color: var(--text-light);">在快节奏的现代生活中，"慢"是一种奢侈，更是一种能力。通过春日茶道与冥想，我们可以重新连接身体的节奏。</p>
+                        <ul class="feature-list">
+                            <li>选择当季新茶，感受舌尖的鲜爽</li>
+                            <li>在晨光中练习正念呼吸，唤醒身体机能</li>
+                            <li>整理居住环境，让阳光洒满每一个角落</li>
+                            <li>阅读一本关于自然与哲学的好书</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-img">
+                        <img src="https://picsum.photos/seed/park/600/400" alt="城市公园漫步">
+                    </div>
+                    <div class="feature-content">
+                        <h3>城市微更新：发现身边的春天</h3>
+                        <p style="margin-bottom: 20px; color: var(--text-light);">不需要远行，城市的公园与河畔同样藏着生机。通过"城市漫步"（City Walk）的方式，重新审视我们生活的环境。</p>
+                        <ul class="feature-list">
+                            <li>寻找城市中最早的开放花朵</li>
+                            <li>观察鸟类和昆虫的复苏活动</li>
+                            <li>在公园的长椅上发呆，观察行人的笑脸</li>
+                            <li>记录下你发现的三个城市变化</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-steps">
+            <div class="container">
+                <div class="section-header">
+                    <h2>如何更好地享受春光</h2>
+                    <p>四个简单的步骤，让这个春天焕然一新</p>
+                </div>
+                <div class="step-container">
+                    <div class="step-item">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">调整作息</h3>
+                        <p class="step-desc">顺应日照变化，适当早起，迎接清晨的第一缕阳光。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">色彩穿搭</h3>
+                        <p class="step-desc">换上明亮的春装，让自己融入自然，心情也会随之明亮。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">接触自然</h3>
+                        <p class="step-desc">每周至少安排一次户外活动，接触泥土与植物。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">04</div>
+                        <h3 class="step-title">分享快乐</h3>
+                        <p class="step-desc">将你的春日发现分享给亲友，让快乐传递。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <div class="container">
+            <section class="newsletter">
+                <h2>订阅春日周刊</h2>
+                <p>每周获取最新的自然疗愈资讯、旅行灵感与生活美学建议。</p>
+                <form class="form-group" onsubmit="event.preventDefault(); alert('感谢订阅！我们已将确认邮件发送至您的邮箱。');">
+                    <input type="email" placeholder="请输入您的邮箱地址" required>
+                    <button type="submit">订阅</button>
+                </form>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于春光指南</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">我们致力于推广自然生活方式，帮助人们在繁忙的都市中找到与自然连接的桥梁，重拾对生活的热爱与感知力。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索主题</h4>
+                    <ul>
+                        <li><a href="#">山林徒步</a></li>
+                        <li><a href="#">花卉摄影</a></li>
+                        <li><a href="#">野餐美食</a></li>
+                        <li><a href="#">冥想瑜伽</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>实用工具</h4>
+                    <ul>
+                        <li><a href="#">花期查询</a></li>
+                        <li><a href="#">天气预报</a></li>
+                        <li><a href="#">装备推荐</a></li>
+                        <li><a href="#">急救指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作投稿</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 春光指南网 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>

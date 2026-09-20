@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公仆-政府服务与便民政策查询平台</title>
+    <meta name="description" content="公仆服务门户提供最新政府政策解读、行政审批流程查询、便民办事指南及公共服务资讯。致力于打造高效、透明、便民的政务服务入口。">
+    <meta name="keywords" content="公仆,政府服务,行政审批,便民政策,政务公开">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-light: #e6f0fa;
+            --secondary-color: #343a40;
+            --accent-color: #ff9800;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: white;
+            font-weight: 500;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 250px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #003d80 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e68900;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        /* Quick Access Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .link-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .link-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .link-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Content Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                height: auto;
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            nav {
+                width: 100%;
+                order: 3;
+                margin-top: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .search-box {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* News List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-date {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            min-width: 60px;
+            margin-right: 20px;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .news-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        aside .widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .policy-list {
+            list-style: none;
+        }
+
+        .policy-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 8px;
+        }
+
+        .policy-list li:last-child {
+            border-bottom: none;
+        }
+
+        .policy-list a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .policy-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .badge-hot { background-color: #ffebee; color: #c62828; }
+        .badge-new { background-color: #e8f5e9; color: #2e7d32; }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <div class="logo-icon">公</div>
+            公仆服务网
+        </div>
+        <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">政务服务</a></li>
+                <li><a href="#">政策法规</a></li>
+                <li><a href="#">互动交流</a></li>
+                <li><a href="#">办事指南</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索政策或办事事项...">
+            <button class="search-btn">🔍</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>全心全意为人民服务</h1>
+            <p>汇聚最新政务资讯，提供便捷办事入口，打造透明高效的服务平台。</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">我要办事</a>
+                <a href="#" class="btn btn-outline">政策查询</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Quick Access -->
+        <section>
+            <div class="section-title">
+                <span>高频服务</span>
+                <a href="#" style="font-size: 0.9rem; color: var(--primary-color); text-decoration: none;">查看全部 &gt;</a>
+            </div>
+            <div class="quick-links">
+                <div class="link-card">
+                    <div class="link-icon">🛂</div>
+                    <div class="link-title">居住证办理</div>
+                    <div class="link-desc">在线申请、进度查询</div>
+                </div>
+                <div class="link-card">
+                    <div class="link-icon">🚗</div>
+                    <div class="link-title">车辆年检</div>
+                    <div class="link-desc">网上预约、检测点查询</div>
+                </div>
+                <div class="link-card">
+                    <div class="link-icon">🧾</div>
+                    <div class="link-title">社保查询</div>
+                    <div class="link-desc">缴费记录、待遇申领</div>
+                </div>
+                <div class="link-card">
+                    <div class="link-icon">🎓</div>
+                    <div class="link-title">公积金提取</div>
+                    <div class="link-desc">购房、租房提取指南</div>
+                </div>
+                <div class="link-card">
+                    <div class="link-icon">📜</div>
+                    <div class="link-title">出生登记</div>
+                    <div class="link-desc">新生儿落户一站式服务</div>
+                </div>
+                <div class="link-card">
+                    <div class="link-icon">⚖️</div>
+                    <div class="link-title">法律援助</div>
+                    <div class="link-desc">免费法律咨询与援助</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="content-grid">
+            <section>
+                <div class="section-title">
+                    <span>最新政务动态</span>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div>10月</div>
+                            <div>24</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">关于进一步优化营商环境若干措施的通知</a> <span class="badge badge-hot">热点</span></h3>
+                            <p>为深化“放管服”改革，提升政务服务效能，现将相关优化措施发布如下，旨在为企业提供更高效的服务...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div>10</div>
+                            <div>22</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">2023年度企业年报公示工作启动</a> <span class="badge badge-new">最新</span></h3>
+                            <p>2023年度企业年报公示工作现已正式开始，请各相关企业登录国家企业信用信息公示系统进行填报...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div>10</div>
+                            <div>18</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">市政务服务大厅周末延时服务公告</a></h3>
+                            <p>为方便群众办事，市政务服务中心将于每周六提供延时服务，具体开放时间及办理事项清单如下...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div>10</div>
+                            <div>15</div>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">解读《城市更新条例》实施细则</a></h3>
+                            <p>为进一步规范城市更新工作，保障群众合法权益，现对《城市更新条例》实施细则进行详细解读...</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">热门政策</h3>
+                    <ul class="policy-list">
+                        <li><a href="#">城乡居民基本养老保险待遇领取资格认证</a></li>
+                        <li><a href="#">公共场所卫生许可新办流程</a></li>
+                        <li><a href="#">高校毕业生就业创业补贴申领指南</a></li>
+                        <li><a href="#">不动产登记“一网通办”操作手册</a></li>
+                        <li><a href="#">困难群众临时救助申请须知</a></li>
+                        <li><a href="#">残疾人两项补贴发放标准调整</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">常见问题</h3>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <p style="margin-bottom: 10px;"><strong>Q: 如何查询个人社保缴费记录？</strong></p>
+                        <p style="margin-bottom: 15px; color: #666;">A: 您可以登录当地人社局官网，通过“个人社保查询”入口，输入身份证号和密码进行查询。</p>
+                        
+                        <p style="margin-bottom: 10px;"><strong>Q: 公务员办事大厅在哪里？</strong></p>
+                        <p style="margin-bottom: 15px; color: #666;">A: 市级行政服务中心位于市民中心X号楼，提供一站式政务服务。</p>
+
+                        <p style="margin-bottom: 10px;"><strong>Q: 网上办事需要准备哪些材料？</strong></p>
+                        <p style="margin-bottom: 0; color: #666;">A: 具体材料清单请查看办事指南页面，不同事项所需材料可能有所不同。</p>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">专题标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">便民服务</a>
+                        <a href="#" class="tag">疫情防控</a>
+                        <a href="#" class="tag">优化营商环境</a>
+                        <a href="#" class="tag">数字政府</a>
+                        <a href="#" class="tag">乡村振兴</a>
+                        <a href="#" class="tag">教育改革</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 15px; color: white;">
+                <div class="logo-icon" style="background-color: white; color: var(--primary-color);">公</div>
+                公仆服务网
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.8;">
+                致力于打造公开、透明、便捷的政务服务平台，让数据多跑路，让群众少跑腿。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>政务服务</h4>
+            <ul>
+                <li><a href="#">个人办事</a></li>
+                <li><a href="#">法人办事</a></li>
+                <li><a href="#">涉企服务</a></li>
+                <li><a href="#">跨省通办</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>便民资讯</h4>
+            <ul>
+                <li><a href="#">政策法规</a></li>
+                <li><a href="#">通知公告</a></li>
+                <li><a href="#">办事指南</a></li>
+                <li><a href="#">热点问答</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">监督投诉</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">网站地图</a></li>
+                <li><a href="#">隐私政策</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 公仆服务网 版权所有 | 互联网ICP备案号：京ICP备XXXXXXXX号
+    </div>
+</footer>
+
+<script>
+    // 简单的交互逻辑：移动端菜单切换
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        if (nav.style.display === 'block') {
+            nav.style.display = '';
+        } else {
+            nav.style.display = 'block';
+        }
+    });
+
+    // 搜索框交互模拟
+    document.querySelector('.search-btn').addEventListener('click', function() {
+        const input = document.querySelector('.search-box input');
+        if(input.value.trim() !== "") {
+            alert("正在检索： " + input.value + " (演示功能)");
+        }
+    });
+</script>
+
+</body>
+</html>
